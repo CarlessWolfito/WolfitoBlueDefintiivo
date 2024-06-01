@@ -1,4 +1,5 @@
 #to get discord.py==1.7.3, open command prompt and write "pip install discord==1.7.3" and "pip install discord.py==1.7.3"
+import os
 import discord
 from discord.ext import commands #importing the modules/libararys so u can use them to make ur selfbot
 from flask import Flask, render_template
