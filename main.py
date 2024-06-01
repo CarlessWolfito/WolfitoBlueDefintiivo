@@ -1,7 +1,27 @@
 #to get discord.py==1.7.3, open command prompt and write "pip install discord==1.7.3" and "pip install discord.py==1.7.3"
 import discord
 from discord.ext import commands #importing the modules/libararys so u can use them to make ur selfbot
- 
+from flask import Flask, render_template
+from threading import Thread
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return '''<body style="margin: 0; padding: 0;">
+    <iframe width="100%" height="100%" src="https://axocoder.vercel.app/" frameborder="0" allowfullscreen></iframe>
+  </body>'''
+
+def run():
+    app.run(host='0.0.0.0', port=8080)
+
+def keep_alive():  
+    t = Thread(target=run)
+    t.start()
+
+keep_alive()
+print("Server Running Because of Axo")
+
  token = os.getenv("DISCORD_BOT_TOKEN")
 if not token:
     raise ValueError("El token del bot de Discord no está configurado en la variable de entorno DISCORD_BOT_TOKEN")
