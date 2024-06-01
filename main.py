@@ -23,7 +23,7 @@ def keep_alive():
 keep_alive()
 print("Server Running Because of Axo")
 
- token = os.getenv("DISCORD_BOT_TOKEN")
+token = os.getenv("DISCORD_BOT_TOKEN")
 if not token:
     raise ValueError("El token del bot de Discord no está configurado en la variable de entorno DISCORD_BOT_TOKEN")
 
